@@ -47,7 +47,14 @@ export class HomePage {
          handler: () => {
           this.socialSharing.shareViaTwitter(music.name, music.image, music.music_url);
         }
-       },       
+       },
+       {
+         text: "Share",
+         icon: "share",
+         handler: () => {
+          this.socialSharing.share(music.name,"", music.image, music.music_url);
+        }
+       },
        {
          text: "Cancel",
          role: "destructive"
