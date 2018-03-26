@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const API:string = "http://davidpots.com/jakeworry/017%20JSON%20Grouping,%20part%203/data.json";
+const API:string = "https://raw.githubusercontent.com/CsgeeksYoutube/ionic-music-app-data-file/master/New%20Text%20Document.json";
 
 @Injectable()
 export class MusicsProvider {
@@ -11,7 +11,7 @@ export class MusicsProvider {
   }
 
   getMusic() {
-    return this.http.get(API)
+    return this.http.get(API);
   }
 
 }
