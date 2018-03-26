@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MusicsProvider } from '../providers/musics/musics';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { Media } from '@ionic-native/media';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     MusicsProvider,
-    SocialSharing
+    SocialSharing,
+    Media
   ]
 })
 export class AppModule { }
