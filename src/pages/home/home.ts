@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, LoadingController } from 'ionic-angular';
+import { NavController, LoadingController, ActionSheetController } from 'ionic-angular';
 import { MusicsProvider } from '../../providers/musics/musics';
 
 @Component({
@@ -11,9 +11,10 @@ export class HomePage {
 
   constructor(public navCtrl: NavController,
     private musicProvider: MusicsProvider,
-    public loadingCltr: LoadingController) {
+    public loadingCltr: LoadingController,
+    public actionSheetCltr: ActionSheetController) {
 
-  }
+  } 
 
   ionViewDidLoad() {
     let allMusicLoadingCltr = this.loadingCltr.create({
@@ -26,6 +27,30 @@ export class HomePage {
         this.allMusic = musicList;
         allMusicLoadingCltr.dismiss();
       });
+  } 
+  shareSong() {
+   let shareSongActionSheet = this.actionSheetCltr.create({
+     title: "Share Song",
+     buttons: [
+       {
+         text: "Facebook",
+         icon: "logo-facebook"
+       },
+       {
+         text: "Twitter",
+         icon: "logo-twitter"
+       },
+       {
+         text: "Share",
+         icon: "share"
+       },
+       {
+         text: "Cancel",
+         role: "destructive"
+       }  
+     ]
+   });
+   shareSongActionSheet.present();  
   }
 
 }
